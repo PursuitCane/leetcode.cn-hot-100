@@ -16,8 +16,9 @@ public:
         }
         int size = que.size();
         int depth = -1;
-        while (size != 0) {
+        while (!que.empty()) {
             depth++;
+            size = que.size();
             while (size--) {
                 auto p = que.front(); que.pop();
                 for (int i = 0; i < dir.size(); i++) {
@@ -30,7 +31,6 @@ public:
                     }
                 }
             }
-            size = que.size();
         }
 
         for (int i = 0; i < n; i++) {
